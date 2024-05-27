@@ -35,7 +35,8 @@
   width: 30px;
 }
 
-.header__media-link img:hover {
+.header__media-link img:hover,
+.header__basket img:hover {
   opacity: 0.7;
   transform: scale(1.1);
 }

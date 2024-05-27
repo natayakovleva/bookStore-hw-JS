@@ -50,6 +50,12 @@
   gap: 3px;
 }
 
+.catalog__btn, .card__add {
+  width: 100px;
+  border-radius: 4px;
+  background-color: #e2ebed;
+}
+
 .card__add.active {
   background-color: #2aa9bd;
   color: #fff;

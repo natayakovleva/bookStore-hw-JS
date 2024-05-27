@@ -26,7 +26,7 @@ getDataFromIndexedDB(objectStoreName, function (error, data) {
   } else {
     basket = data;
     basketCount(basket);
-    activeCards(basket); console.log('displayData');
+    activeCards(basket); 
   }
 });
 
@@ -70,12 +70,13 @@ function showData(data) {
 loadMoreBtn.onclick = () => {
 
   showData(displayData);
+  activeCards(basket); 
 
   if (pagination.skip >= displayData.length) {
-    console.log( pagination.skip);
-    console.log( displayData.length);
+
     loadMoreBtn.disabled = true;
     loadMoreBtn.textContent = 'End';
+    loadMoreBtn.style.backgroundColor = '#2aa9bd';
   }
 
 };
@@ -97,16 +98,25 @@ function handleCardClick(event) {
 
 
 applyFiltersBtn.addEventListener('click', () => {
+
+  if (pagination.skip > displayData.length) {
+
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.textContent = 'Add to Cart';
+    loadMoreBtn.style.backgroundColor = '#e2ebed';
+  }
+
     const categoryGroup = document.querySelectorAll('#categoryGroup input[type="checkbox"]');
     const languageGroup = document.querySelectorAll('#languageGroup input[type="checkbox"]');
     const bindingGroup = document.querySelectorAll('#bindingGroup input[type="checkbox"]');
     const allGroups = [...categoryGroup, ...languageGroup, ...bindingGroup];
     const allUnchecked = allGroups.every(checkbox => !checkbox.checked);
-
+    
     if (allUnchecked) {
       displayData = JSON.parse(JSON.stringify(productsData));
       startParameters();
       showData(displayData);
+      activeCards(basket);
       return;
     } 
   
@@ -115,8 +125,9 @@ applyFiltersBtn.addEventListener('click', () => {
     
     startParameters();
     displayData = JSON.parse(JSON.stringify(filteredData));
-    // showData(filteredData);
+  
     showData(displayData);
+    activeCards(basket);
   });
 
   function startParameters() {
@@ -137,6 +148,7 @@ ascBtn.addEventListener('click', () => {
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
+  // activeCards(basket);
   // const sortSkip = 0;
   // const sortTake = countOfCardsOnScrean;
 
@@ -149,6 +161,7 @@ descBtn.addEventListener('click', () => {
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
+  // activeCards(basket);
   // const sortSkip = 0;
   // const sortTake = countOfCardsOnScrean;
 

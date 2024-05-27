@@ -123,3 +123,44 @@ aside {
 .apply:hover {
   background-color: #218838;
 }
+
+.catalog__search {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: #2690a0;
+}
+
+.btn__search {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color:  #31c4db;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn__search:hover {
+  background-color: #2690a0;
+}
+
+.btn__search:active {
+  background-color: #15555f;
+}

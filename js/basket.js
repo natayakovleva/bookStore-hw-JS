@@ -2,7 +2,7 @@ import { cartList, objectStoreName, dbName } from "./constants.js";
 
 import { saveDataToIndexedDB } from "./dataBase.js";
 import { getDataFromIndexedDB } from "./dataBase.js";
-import { basketCount } from "./functions.js";
+import { basketCount, htmlTemplate } from "./functions.js";
 
 let basket = [];
 
@@ -21,19 +21,24 @@ getDataFromIndexedDB("basket", function (error, data) {
     }
 
     basketCount(basket);
-    showBasketItem(basket);
+
+    // showBasketItem(basket);
+htmlTemplate('basket-card-template', basket, cartList);
+
     calculateTotalPrice();
     removeProduct();
   }
 });
 
-function showBasketItem(data) {
-  let source = document.getElementById("basket-card-template").innerHTML;
-  let template = Handlebars.compile(source);
-  let html = template(data);
+// function showBasketItem(data) {
+  // let source = document.getElementById("basket-card-template").innerHTML;
+  // let template = Handlebars.compile(source);
+  // let html = template(data);
 
-  cartList.innerHTML += html;
-}
+  // cartList.innerHTML += html;
+
+  // htmlTemplate('basket-card-template', data, cartList);
+// }
 
 function calculateTotalPrice() {
   const totalEl = document.querySelector(".basket__price-total");

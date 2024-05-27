@@ -8,20 +8,37 @@
 
 .catalog__content {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 225px 1fr;
+}
+
+.catalog__wrapper {
+  padding: 15px;
 }
 
 .catalog__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
-  justify-items: center; 
+  justify-items: center;
   column-gap: 25px;
   row-gap: 40px;
   width: 100%;
   margin-bottom: 50px;
 }
 
-.card, .card__inform {
+.card {
+  width: 250px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card__inform {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,12 +51,69 @@
 }
 
 .card__add.active {
-  background-color:  #2AA9BD;
+  background-color: #2aa9bd;
   color: #fff;
 }
 
-.apply:hover,
-.sort__price-asc:hover,
-.sort__price-desc:hover {
-  background-color: #79bbc5;
+aside {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sort__price p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sort__price button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #2aa9bd;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sort__price button:hover {
+  background-color: #1c717e;
+}
+
+.fieldset {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.fieldset legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.fieldset div {
+  margin-bottom: 10px;
+}
+
+.fieldset label {
+  margin-left: 5px;
+}
+
+.apply {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.apply:hover {
+  background-color: #218838;
 }

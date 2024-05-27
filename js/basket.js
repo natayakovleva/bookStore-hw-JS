@@ -13,9 +13,12 @@ getDataFromIndexedDB("basket", function (error, data) {
     const report = document.querySelector(".basket__report");
     report.textContent = "Your Shopping Cart is Empty ...";
   } else {
-
+  
     basket = data;
-
+    if (basket.length === 0) {
+      const report = document.querySelector(".basket__report");
+      report.textContent = "Your Shopping Cart is Empty ...";
+    }
 
     basketCount(basket);
     showBasketItem(basket);

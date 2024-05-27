@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookStore</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
 
-    <header data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.header.partial.html"></header>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.header.partial.html"
+    ></header>
 
     <main class="main">
-        <section class="container">
-            Contetn
-        </section>
+      <section class="container">
+        <div class="wrapper">
+          <img src="img/hero.webp" alt="hero image" />
+        </div>
+      </section>
     </main>
-    <footer data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-get="index.footer.partial.html"></footer>
+    <footer
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.footer.partial.html"
+    ></footer>
 
-    
-</body>
+    <script type="module" src="js/slider.js"></script>
+  </body>
 </html>

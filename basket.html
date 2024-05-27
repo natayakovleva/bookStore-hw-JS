@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  </head>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/basket.css" />
+  <body>
+    <header
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.header.partial.html"
+    ></header>
+    <main class="main">
+      <section class="section__basket container">
+        <h1 class="basket__title">Shopping Cart</h1>
+        <p class="basket__report"></p>
+
+        <div id="basket-list" class="basket__list"></div>
+
+        <div class="basket__price">
+          <p>Total price</p>
+          <p class="basket__price-total"></p>
+        </div>
+
+        <script id="basket-card-template" type="text/x-handlebars-template">
+          {{#each this}}
+
+            <div class="cart__product" data-cart-id="{{id}}">
+              <div class="cart__inner">
+                <div class="cart__img">
+                  <img src="./img/{{image}}" alt="{{title}}" />
+                </div>
+                <div>
+                  <div class="cart__title">{{title}}</div>
+                  <div class="cart__author">{{author}}</div>
+                </div>
+                
+                <div class="cart__block-btns">
+                  <button class="cart__minus">-</button>
+                  <div class="cart__count">1</div>
+                  <button class="cart__plus">+</button>
+                </div>
+                <div class="cart__price">
+                  <span>{{price}}$</span>
+                </div>
+                <button class="remove-btn">X</button>
+              </div>
+              <div>
+                <p class="cart__message"></p>
+              </div>
+            </div>
+          {{/each}}
+        </script>
+      </section>
+    </main>
+
+    <footer
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.footer.partial.html"
+    ></footer>
+    <script type="module" src="js/basket.js"></script>
+  </body>
+</html>

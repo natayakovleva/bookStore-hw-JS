@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/catalog.css" />
+  </head>
+  <body>
+    <header
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.header.partial.html"
+    ></header>
+
+    <main>
+      <section class="section__catalog container">
+        <h1 class="catalog__title">Product Catalog</h1>
+        
+
+        <div class="catalog__content">
+          <aside>
+            <div class="catalog__sort">
+                <div class="sort__price">
+                  <p>Price</p>
+                  <button class="sort__price-asc">in ascending order</button>
+                  <button class="sort__price-desc">in descending order</button>
+                </div>
+              </div>
+            <fieldset class="fieldset" id="categoryGroup">
+              <legend>Category:</legend>
+              <div>
+                <input type="checkbox" id="business" name="business" />
+                <label for="business">Business</label>
+              </div>
+              <div>
+                <input type="checkbox" id="cooking" name="cooking" />
+                <label for="cooking">Cooking</label>
+              </div>
+              <div>
+                <input type="checkbox" id="health" name="health" />
+                <label for="health">Health</label>
+              </div>
+              <div>
+                <input type="checkbox" id="classics" name="classics" />
+                <label for="classics">Classics</label>
+              </div>
+              <div>
+                <input type="checkbox" id="fantasy" name="fantasy" />
+                <label for="Fantasy">Fantasy</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset" id="languageGroup">
+              <legend>language:</legend>
+              <div>
+                <input type="checkbox" id="english" name="english" />
+                <label for="english">English</label>
+              </div>
+              <div>
+                <input type="checkbox" id="spanish" name="spanish" />
+                <label for="spanish">Spanish</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset" id="bindingGroup">
+              <legend>binding:</legend>
+              <div>
+                <input type="checkbox" id="hardcover" name="hardcover" />
+                <label for="hardcover">Hardcover</label>
+              </div>
+              <div>
+                <input type="checkbox" id="paperback" name="paperback" />
+                <label for="paperback">Paperback</label>
+              </div>
+            </fieldset>
+            <button class="apply">Apply</button>
+          </aside>
+          <div>
+            <div id="product-list" class="catalog__list"></div>
+            <button id="loadMore" class="catalog__btn">Show More</button>
+          </div>
+        </div>
+
+        <script id="product-card-template" type="text/x-handlebars-template">
+          {{#each this}}
+            <div class="card" data-product-id="{{id}}">
+              <img src="img/{{image}}" class="card__img" alt={{title}} />
+              <div class="card__inform">
+                <p class="card__author">{{author}}</p>
+                <h5 class="card__title">{{title}}</h5>
+                <p class="card__price">{{price}}$</p>
+                <p class="card__text">
+                  <small class="text-body-secondary">{{category}}</small>
+                </p>
+                <div>
+                  <button class="card__add">Add to Cart -{{id}}</button>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </script>
+      </section>
+    </main>
+
+    <footer
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="index.footer.partial.html"
+    ></footer>
+    <script type="module" src="js/catalog.js"></script>
+  </body>
+</html>

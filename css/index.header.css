@@ -1,0 +1,41 @@
+.header {
+  background-color: #eff3f6;
+}
+
+.header__wrapper {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-link img {
+  width: 120px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 35px;
+}
+
+.header__links {
+  display: flex;
+  gap: 35px;
+}
+
+.header__media {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.header__media-link img,
+.header__basket img {
+  width: 30px;
+}
+
+.header__media-link img:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}

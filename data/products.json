@@ -1,0 +1,222 @@
+[
+     {
+        "id":1,
+        "title":"Atomic Habits",
+        "author":"James Clear",
+        "category":"Business",
+        "language":"English",
+        "price":"7.10",
+        "stock":"10",
+        "image":"img-01.jpg",
+        "binding":"Paperback"
+     },
+     {
+        "id":2,
+        "title":"The 7 Habits of Highly Effective People",
+        "author":"Covey, Stephen R.",
+        "category":"Business",
+        "language":"English",
+        "price":"6.36",
+        "stock":"5",
+        "image":"img-02.jpg",
+        "binding":"Paperback"
+     },
+     {
+        "id":3,
+        "title":"The Psychology of Money",
+        "author":"Housel, Morgan",
+        "category":"Business",
+        "language":"English",
+        "price":"7.99",
+        "stock":"2",
+        "image":"img-03.jpg",
+        "binding":"Paperback"
+     },
+     {
+        "id":4,
+        "title":"Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness",
+        "author":"Magness, Steve",
+        "category":"Business",
+        "language":"English",
+        "price":"8.49",
+        "stock":"1",
+        "image":"img-04.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":5,
+        "title":"Gambler: Secrets From a Life at Risk",
+        "author":"Walters, Billy",
+        "category":"Business",
+        "language":"English",
+        "price":"10.61",
+        "stock":"2",
+        "image":"img-05.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":6,
+        "title":"Win Every Argument: The Art of Debating, Persuading, and Public Speaking",
+        "author":"Hasan, Mehdi",
+        "category":"Business",
+        "language":"English",
+        "price":"7.64",
+        "stock":"9",
+        "image":"img-06.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":7,
+        "title":"Gordon Ramsay Quick and Delicious: 100 Recipes to Cook in 30 Minutes or Less",
+        "author":"Ramsay, Gordon",
+        "category":"Cooking",
+        "language":"English",
+        "price":"11.99",
+        "stock":"5",
+        "image":"img-07.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":8,
+        "title":"Verduras Sin Limites Y Otras Historias",
+        "author":"Andrés, José",
+        "category":"Cooking",
+        "language":"Spanish",
+        "price":"12.74",
+        "stock":"1",
+        "image":"img-08.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":9,
+        "title":"The Big Book of Organic Baby Food",
+        "author":"Middleberg, Stephanie",
+        "category":"Cooking",
+        "language":"English",
+        "price":"5.94",
+        "stock":"8",
+        "image":"img-09.webp",
+        "binding":"Paperback"
+     },
+     {
+        "id":10,
+        "title":"Todos Los Cuentos",
+        "author":"Márquez, Gabriel Garcia",
+        "category":"Fantasy",
+        "language":"Spanish",
+        "price":"7.64",
+        "stock":"11",
+        "image":"img-10.webp",
+        "binding":"Hardcover"
+     },
+     {
+        "id":11,
+        "title":"Fall of Ruin and Wrath",
+        "author":"Armentrout, Jennifer L.",
+        "category":"Fantasy",
+        "language":"English",
+        "price":"7.64",
+        "stock":"4",
+        "image":"img-11.webp",
+        "binding":"Hardcover"
+     },
+     {
+        "id":12,
+        "title":"Throne of the Fallen",
+        "author":"Maniscalco, Kerri",
+        "category":"Fantasy",
+        "language":"English",
+        "price":"8.06",
+        "stock":"2",
+        "image":"img-12.webp",
+        "binding":"Hardcover"
+     },
+     {
+        "id":13,
+        "title":"The Gunslinger",
+        "author":"King, Stephen",
+        "category":"Fantasy",
+        "language":"English",
+        "price":"5.51",
+        "stock":"7",
+        "image":"img-13.webp",
+        "binding":"Paperback"
+     },
+     {
+        "id":14,
+        "title":"The Blood Sugar Solution 10-Day Detox Diet: Activate Your Body's Natural Ability to Burn Fat and Lose Weight Fast",
+        "author":"Hyman, Mark",
+        "category":"Health",
+        "language":"English",
+        "price":"12.7",
+        "stock":"1",
+        "image":"img-14.webp",
+        "binding":"Hardcover"
+     },
+     {
+        "id":15,
+        "title":"Eat Fat, Get Thin: Why the Fat We Eat Is the Key to Sustained Weight Loss and Vibrant Health",
+        "author":"Hyman, Mark",
+        "category":"Health",
+        "language":"English",
+        "price":"11.9",
+        "stock":"2",
+        "image":"img-15.jpg",
+        "binding":"Hardcover"
+     },
+     {
+        "id":16,
+        "title":"21-Day Weight Loss Kickstart: Boost Metabolism, Lower Cholesterol, and Dramatically Improve Your Health",
+        "author":"Barnard, Neal D.",
+        "category":"Health",
+        "language":"English",
+        "price":"7.42",
+        "stock":"5",
+        "image":"img-16.webp",
+        "binding":"Paperback"
+     },
+     {
+        "id":17,
+        "title":"Rule of the Aurora King (Artefacts of Ouranos, Bk. 2)",
+        "author":"Tuli, Nisha J.",
+        "category":"Fantasy",
+        "language":"English",
+        "price":"6.36",
+        "stock":"3",
+        "image":"img-17.webp",
+        "binding":"Paperback"
+     },
+     {
+        "id":18,
+        "title":"Fairy Tale",
+        "author":"King, Stephen",
+        "category":"Fantasy",
+        "language":"English",
+        "price":"6.79",
+        "stock":"2",
+        "image":"img-18.webp",
+        "binding":"Paperback"
+     },
+     {
+        "id":19,
+        "title":"Grimm's Fairy Tales",
+        "author":"Grimm, J. L. C.",
+        "category":"Classics",
+        "language":"English",
+        "price":"7.99",
+        "stock":"1",
+        "image":"img-19.webp",
+        "binding":"Hardcover"
+     },
+     {
+        "id":20,
+        "title":"Frankenstein",
+        "author":"Shelley, Mary",
+        "category":"Classics",
+        "language":"English",
+        "price":"7.99",
+        "stock":"7",
+        "image":"img-20.webp",
+        "binding":"Hardcover"
+     }
+]

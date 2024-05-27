@@ -1,0 +1,45 @@
+@import "global.css";
+@import "index.header.css";
+@import "index.footer.css";
+
+.section__catalog {
+  padding: 15px;
+}
+
+.catalog__content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-items: center; 
+  column-gap: 25px;
+  row-gap: 40px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.card, .card__inform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card__inform {
+  gap: 3px;
+}
+
+.card__add.active {
+  background-color:  #2AA9BD;
+  color: #fff;
+}
+
+.apply:hover,
+.sort__price-asc:hover,
+.sort__price-desc:hover {
+  background-color: #79bbc5;
+}

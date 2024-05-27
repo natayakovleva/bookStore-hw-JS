@@ -6,23 +6,19 @@ import {
   ascBtn,
   descBtn,
   objectStoreName,
+  btnSearch
 } from "./constants.js";
 
-import { saveDataToIndexedDB, getDataFromIndexedDB } from "./dataBase.js";
-// import { getDataFromIndexedDB } from "./dataBase.js";
 import {
   basketCount,
   activeCards,
   sliceData,
-  htmlTemplate,
+  htmlTemplate
 } from "./functions.js";
-// import { activeCards } from './functions.js';
-// import { sliceData } from './functions.js';
+
 import { getFilters, setFilters, selectFilter } from "./filter.js";
-// import { setFilters } from './filter.js';
-// import { selectFilter } from './filter.js';
 import { sortProductsPriceAsc, sortProductsPriceDesc } from "./sort.js";
-// import { sortProductsPriceDesc } from './sort.js';
+import { saveDataToIndexedDB, getDataFromIndexedDB } from "./dataBase.js";
 
 let productsData = [];
 let displayData = [];
@@ -30,7 +26,6 @@ let basket = [];
 
 getData();
 
-// проверка - есть ли в ДБ массив
 getDataFromIndexedDB(objectStoreName, function (error, data) {
   if (error) {
     console.error("Basket was empty", error);
@@ -44,14 +39,12 @@ getDataFromIndexedDB(objectStoreName, function (error, data) {
 async function getData() {
   try {
     if (!productsData.length) {
-      // если массив не пустой
       const res = await fetch(`../data/products.json`);
       if (!res.ok) {
         throw new Error(res.statusText);
       }
       productsData = await res.json();
       displayData = JSON.parse(JSON.stringify(productsData));
-
       showData(displayData);
     }
   } catch (err) {
@@ -59,40 +52,29 @@ async function getData() {
   }
 }
 
-// function htmlTemplate(nameId, data, wrap) {
-//   let source = document.getElementById(nameId).innerHTML;
-//   let template = Handlebars.compile(source);
-//   let html = template(data);
-//   wrap.innerHTML += html;
-// }
-
 function showData(data) {
-  //   Крок 3: Отримання шаблону
-  // let source = document.getElementById('product-card-template').innerHTML;
-  // let template = Handlebars.compile(source);
-
   const showData = sliceData(data, pagination);
-
   pagination.nextStart();
   pagination.nextFinish();
-
-  // Крок 4: Генерація HTML за допомогою шаблону та даних
-  // let html = template(showData);
-  // Крок 5: Вставка згенерованого HTML в DOM
-  // cards.innerHTML += html;
   htmlTemplate("product-card-template", showData, cards);
 }
 
 loadMoreBtn.onclick = () => {
   showData(displayData);
   activeCards(basket);
-
-  if (pagination.skip >= displayData.length) {
-    loadMoreBtn.disabled = true;
-    loadMoreBtn.textContent = "End";
-    loadMoreBtn.style.backgroundColor = "#2aa9bd";
-  }
+  loadMoreBtnEnd(displayData);
 };
+
+function loadMoreBtnEnd(data) {
+  if (pagination.skip >= data.length) {
+    loadMoreBtn.style.display = 'none';
+  } else {
+    loadMoreBtn.style.display = 'block';
+    loadMoreBtn.disabled = false;
+    loadMoreBtn.textContent = "Show More";
+    loadMoreBtn.style.backgroundColor = '#e2ebed';
+  }
+}
 
 cards.addEventListener("click", handleCardClick);
 
@@ -110,12 +92,6 @@ function handleCardClick(event) {
 }
 
 applyFiltersBtn.addEventListener("click", () => {
-  if (pagination.skip > displayData.length) {
-    loadMoreBtn.disabled = false;
-    loadMoreBtn.textContent = "Add to Cart";
-    loadMoreBtn.style.backgroundColor = "#e2ebed";
-  }
-
   const categoryGroup = document.querySelectorAll(
     '#categoryGroup input[type="checkbox"]'
   );
@@ -133,17 +109,16 @@ applyFiltersBtn.addEventListener("click", () => {
     startParameters();
     showData(displayData);
     activeCards(basket);
+    loadMoreBtnEnd(displayData);
     return;
   }
-
   const filtersList = getFilters();
   const filteredData = setFilters(productsData, filtersList);
-
   startParameters();
   displayData = JSON.parse(JSON.stringify(filteredData));
-
   showData(displayData);
   activeCards(basket);
+  loadMoreBtnEnd(displayData);
 });
 
 function startParameters() {
@@ -156,18 +131,11 @@ selectFilter("categoryGroup");
 selectFilter("languageGroup");
 selectFilter("bindingGroup");
 
-// Сортировка
-
 ascBtn.addEventListener("click", () => {
   const sortData = sortProductsPriceAsc(displayData);
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
-  // activeCards(basket);
-  // const sortSkip = 0;
-  // const sortTake = countOfCardsOnScrean;
-
-  // getProducts(basket, displayData, sortSkip, sortTake);
 });
 
 descBtn.addEventListener("click", () => {
@@ -175,22 +143,21 @@ descBtn.addEventListener("click", () => {
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
-  // activeCards(basket);
-  // const sortSkip = 0;
-  // const sortTake = countOfCardsOnScrean;
-
-  // getProducts(basket, displayData, sortSkip, sortTake);
 });
 
-document.querySelector(".btn__search").addEventListener("click", searchData);
 
-function searchData(event) {
+btnSearch.addEventListener("click", searchData);
+
+function searchData() {
   const input = document.getElementById("searchInput");
   const filter = input.value.toUpperCase();
   const results = productsData.filter((item) => {
-    return item.author.toLowerCase().includes(filter.toLowerCase()) || item.title.toLowerCase().includes(filter.toLowerCase());
+    return (
+      item.author.toLowerCase().includes(filter.toLowerCase()) ||
+      item.title.toLowerCase().includes(filter.toLowerCase())
+    );
   });
-
   startParameters();
   showData(results);
+  loadMoreBtnEnd(results);
 }

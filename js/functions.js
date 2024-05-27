@@ -4,11 +4,8 @@ export function basketCount(data) {
 }
 
 function findBtnById(id) {
-  // Знаходимо картку з певним productId
   const cards = document.querySelector("#product-list");
   const card = cards.querySelector(`.card[data-product-id="${id}"]`);
-
-  // Якщо картка знайдена, знаходимо кнопку всередині цієї картки
   if (card) {
     const btn = card.querySelector(".card__add");
     return btn;
@@ -17,7 +14,6 @@ function findBtnById(id) {
   }
 }
 
-// функция для доб стиля кнопке
 export function activeCards(data) {
   const ids = data.map((item) => item.id);
   ids.forEach((productId) => {

@@ -11,8 +11,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
-    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/catalog.css" />
   </head>
   <body>
@@ -25,21 +23,24 @@
     <main>
       <section class="section__catalog container">
         <h1 class="catalog__title">Product Catalog</h1>
-        
 
         <div class="catalog__content">
-          <aside>
+          <aside class="aside__catalog">
             <div class="catalog__search">
-              <input type="text" id="searchInput" placeholder="search by author and title">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="search by author and title"
+              />
               <button class="btn__search" type="button">Search for</button>
             </div>
             <div class="catalog__sort">
-                <div class="sort__price">
-                  <p>Price</p>
-                  <button class="sort__price-asc">in ascending order</button>
-                  <button class="sort__price-desc">in descending order</button>
-                </div>
+              <div class="sort__price">
+                <p>Price</p>
+                <button class="sort__price-asc">in ascending order</button>
+                <button class="sort__price-desc">in descending order</button>
               </div>
+            </div>
             <fieldset class="fieldset" id="categoryGroup">
               <legend>Category:</legend>
               <div>

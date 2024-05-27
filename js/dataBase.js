@@ -1,4 +1,4 @@
-// Функція для ініціалізації бази даних
+
 function initDatabase(dbName, dbVersion, objectStoreName, callback) {
   const request = indexedDB.open(dbName, dbVersion);
 
@@ -19,14 +19,15 @@ function initDatabase(dbName, dbVersion, objectStoreName, callback) {
   };
 }
 
-// Функція для збереження даних в IndexedDB
 export function saveDataToIndexedDB(data, objectStoreName) {
-  const dbName = "universal-store";
-  const dbVersion = 2; // Оновлення версії бази даних
+  const dbName = 'universal-store';
+  const dbVersion = 2;
 
   initDatabase(dbName, dbVersion, objectStoreName, (db) => {
     if (!db.objectStoreNames.contains(objectStoreName)) {
-      console.error(`Object store "${objectStoreName}" not found after upgrade`);
+      console.error(
+        `Object store "${objectStoreName}" not found after upgrade`
+      );
       db.close();
       return;
     }
@@ -49,10 +50,9 @@ export function saveDataToIndexedDB(data, objectStoreName) {
   });
 }
 
-// Функція для зчитування даних з IndexedDB
 export function getDataFromIndexedDB(objectStoreName, callback) {
-  const dbName = "universal-store";
-  const dbVersion = 2; // Оновлення версії бази даних
+  const dbName = 'universal-store';
+  const dbVersion = 2;
 
   initDatabase(dbName, dbVersion, objectStoreName, (db) => {
     if (!db.objectStoreNames.contains(objectStoreName)) {

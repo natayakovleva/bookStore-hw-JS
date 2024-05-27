@@ -61,7 +61,7 @@
   color: #fff;
 }
 
-aside {
+.aside__catalog {
   padding: 10px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
@@ -163,4 +163,8 @@ aside {
 
 .btn__search:active {
   background-color: #15555f;
+}
+
+.card__img {
+  width: 150px;
 }

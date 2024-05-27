@@ -2,11 +2,9 @@
 @import "index.header.css";
 @import "index.footer.css";
 
-
 .section__basket {
   padding: 15px;
 }
-
 
 .cart__product {
   background-color: #fff;
@@ -102,6 +100,10 @@
   grid-column: 1 / -1;
 }
 
+.basket__list {
+  min-height: 50vh;
+}
+
 .basket__price {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -128,4 +130,3 @@
   font-weight: bold;
   color: #196975;
 }
-

@@ -1,13 +1,12 @@
-
 export const cards = document.querySelector("#product-list");
 export const loadMoreBtn = document.querySelector("#loadMore");
-export const applyFiltersBtn = document.querySelector('.apply');
-export const ascBtn = document.querySelector('.sort__price-asc');
-export const descBtn = document.querySelector('.sort__price-desc');
+export const applyFiltersBtn = document.querySelector(".apply");
+export const ascBtn = document.querySelector(".sort__price-asc");
+export const descBtn = document.querySelector(".sort__price-desc");
+export const btnSearch = document.querySelector(".btn__search");
+export const cartList = document.getElementById('basket-list');
 
-export const cartList = document.querySelector("#basket-list");
-
-export  const pagination = {
+export const pagination = {
   skip: 0,
   limit: 5,
   count: 5,
@@ -21,5 +20,5 @@ export  const pagination = {
   },
 };
 
-export const objectStoreName = 'basket';
-export const dbName = 'universal-store'; 
+export const objectStoreName = "basket";
+export const dbName = "universal-store";

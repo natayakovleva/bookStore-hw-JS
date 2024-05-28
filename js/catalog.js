@@ -133,6 +133,7 @@ ascBtn.addEventListener("click", () => {
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
+  loadMoreBtnEnd(displayData);
 });
 
 descBtn.addEventListener("click", () => {
@@ -140,6 +141,7 @@ descBtn.addEventListener("click", () => {
   displayData = JSON.parse(JSON.stringify(sortData));
   startParameters();
   showData(displayData);
+  loadMoreBtnEnd(displayData);
 });
 
 

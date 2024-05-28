@@ -11,22 +11,3 @@ getDataFromIndexedDB(objectStoreName, function (error, data) {
     basketCount(basket);
   }
 });
-
-
-// function init() {
-//   import('./catalog.js');
-//   import('./catalog.js');
-//   import('./constants.js');
-//   import('./dataBase.js');
-//   import('./functions.js');
-//   import('./filter.js');
-//   import('./sort.js');
-// }
-
-// const totalPartials = document.querySelectorAll('[hx-trigger="load"], [data-hx-trigger="load"]').length;
-// let loadedPartialsCount = 0;
-
-// document.body.addEventListener('htmx:afterOnLoad', () => {
-//   loadedPartialsCount++;
-//   if (loadedPartialsCount === totalPartials) init();
-// });

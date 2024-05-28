@@ -159,4 +159,5 @@ function searchData() {
   startParameters();
   showData(results);
   loadMoreBtnEnd(results);
+  activeCards(basket);
 }
